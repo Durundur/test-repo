@@ -1,15 +1,22 @@
 pipeline {
     agent any
-
     triggers {
         githubPush()
     }
-
     stages {
         stage('Build') {
             steps {
-                echo "Running!"
-                sh 'date'
+                echo 'Building Example'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing Example'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying Example'
             }
         }
     }
